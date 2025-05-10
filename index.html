@@ -179,26 +179,6 @@
             </div>
         </div>
     </section>
-    <!-- Photography Section
-    <section class="photography" id="photography">
-        <div class="photography-content">
-            <h2 class="section-title">Photography</h2>
-            <div class="photography-grid">
-                <div class="photo-slide">
-                    <img src="photo1.jpg" alt="Photography 1">
-                </div>
-                <div class="photo-slide">
-                    <img src="photo2.jpg" alt="Photography 2">
-                </div>
-                <div class="photo-slide">
-                    <img src="photo3.jpg" alt="Photography 3">
-                </div>
-                <div class="photo-slide">
-                    <img src="photo4.jpg" alt="Photography 4">
-                </div>
-            </div>
-        </div>
-    </section> -->
     <section class="contacts" id="contacts">
         <div class="contact-container">
             <h2 class="section-title">Contact Me</h2>
@@ -234,5 +214,23 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <script>
+        const sideNavbar = document.querySelector('.side-navbar');
+        const navLinks = document.querySelectorAll('.nav-links li a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sideNavbar.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
+ <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', function(e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) || (e.ctrlKey && e.key === 'U')) {
+      e.preventDefault();
+    }
+  });
+</script>
 </html>
