@@ -115,7 +115,49 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoScroll();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all section elements and navigation links
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.side-nav-links a');
 
+    // Add click event listeners for smooth scrolling
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            const offset = window.innerWidth <= 768 ? 60 : 0; // Adjust offset for mobile
+
+            window.scrollTo({
+                top: targetSection.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Highlight active section
+    function highlightActiveSection() {
+        let scrollPosition = window.scrollY;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', highlightActiveSection);
+});
 
 
 
