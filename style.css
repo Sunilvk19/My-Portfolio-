@@ -200,13 +200,13 @@ body {
 }
 
 .home-content .highlight {
-    color: #15edf5;
+    color: #f5b22c;
 }
 
 .home-content p {
     font-size: 1.8rem;
     margin-bottom: 2rem;
-    color: #ffffff;
+    color: #f5f0f0;
     font-family: "Playfair Display", serif;
     font-weight: 100;
 }
