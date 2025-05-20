@@ -73,6 +73,7 @@ body {
 
 
 
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -114,7 +115,7 @@ body {
 }
 @media  screen And (max-width: 768px) {
     .navbar {
-        padding: 1rem;
+        padding: 0.5rem;
         position: fixed;
         width: 100%;
         top: 0;
@@ -126,14 +127,14 @@ body {
     }
     .nav-links {
         display: none;
-        flex-direction: column;
+        /* flex-direction: column;
         gap: 0;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
         background: #062f4b;
-        padding: 1rem 0;
+        padding: 1rem 0; */
     }
     .nav-links.active {
         display: flex;
